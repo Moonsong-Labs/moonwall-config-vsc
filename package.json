@@ -1,0 +1,86 @@
+{
+  "name": "moonwall-config",
+  "displayName": "Moonwall Config",
+  "description": "Syntax Highlighting for Moonwall Config files.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:json",
+    "onLanguage:jsonc"
+  ],
+  "main": "./out/extension.js",
+  "icon": "./icons/MoonWallLogo.png",
+  "contributes": {
+    "configuration": [{
+      "title": "Moonwall Config",
+      "properties": {
+        "moonwall-config.applyIconTheme": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically apply the Moonwall icon theme."
+        }
+      }
+    }],
+    "iconThemes": [
+      {
+        "id": "moonwallIcons",
+        "label": "Moonwall Icons",
+        "path": "./themes/moonwall-icon-theme.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "jsonc",
+        "aliases": [
+          "JSON with Comments"
+        ],
+        "filenames": [
+          "moonwall.config"
+        ]
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "moonwall.config.json",
+        "url": "https://raw.githubusercontent.com/Moonsong-Labs/moonwall/main/packages/types/config_schema.json"
+      },
+      {
+        "fileMatch": "moonwall.config",
+        "url": "https://raw.githubusercontent.com/Moonsong-Labs/moonwall/main/packages/types/config_schema.json"
+      }
+    ],
+    "fileAssociations": [
+      {
+        "filenamePattern": "moonwall.config",
+        "language": "jsonc"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "fmt": "prettier --write src/**/*.ts",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
