@@ -16,23 +16,6 @@
   "main": "./out/extension.js",
   "icon": "./icons/MoonWallLogo.png",
   "contributes": {
-    "configuration": [{
-      "title": "Moonwall Config",
-      "properties": {
-        "moonwall-config.applyIconTheme": {
-          "type": "boolean",
-          "default": true,
-          "description": "Automatically apply the Moonwall icon theme."
-        }
-      }
-    }],
-    "iconThemes": [
-      {
-        "id": "moonwallIcons",
-        "label": "Moonwall Icons",
-        "path": "./themes/moonwall-icon-theme.json"
-      }
-    ],
     "languages": [
       {
         "id": "jsonc",
