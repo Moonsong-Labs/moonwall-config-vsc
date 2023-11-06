@@ -1,6 +1,8 @@
 {
   "name": "moonwall-config",
   "displayName": "Moonwall Config",
+  "publisher": "MSL: Moonwall",
+  "publishConfig": {},
   "description": "Syntax Highlighting for Moonwall Config files.",
   "version": "0.0.1",
   "engines": {
@@ -11,7 +13,7 @@
   ],
   "activationEvents": [
     "onLanguage:json",
-    "onLanguage:jsonc"
+    "onLanguage:json5"
   ],
   "main": "./out/extension.js",
   "icon": "./icons/MoonWallLogo.png",
